@@ -1,5 +1,5 @@
 {
-  "name": "cmdk",
+  "name": "@hipstersmoothie/cmdk",
   "version": "0.1.21",
   "license": "MIT",
   "main": "./dist/index.js",
@@ -15,11 +15,12 @@
     "dev": "tsup src --watch"
   },
   "peerDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "1.0.0",
+    "@radix-ui/react-id": "^1.0.0",
     "command-score": "0.1.2"
   },
   "devDependencies": {

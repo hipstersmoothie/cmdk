@@ -1,5 +1,6 @@
 import { Command } from 'cmdk'
 import * as React from 'react'
+import { useId } from '@radix-ui/react-id'
 
 const items = new Array(1000).fill(0)
 
@@ -26,7 +27,7 @@ const Page = () => {
 }
 
 const Item = () => {
-  const id = React.useId()
+  const id = useId()
 
   return <Command.Item key={id}>Item {id}</Command.Item>
 }

@@ -1,5 +1,6 @@
 import * as RadixDialog from '@radix-ui/react-dialog'
 import * as React from 'react'
+import { useId } from '@radix-ui/react-id'
 import commandScore from 'command-score'
 
 type Children = { children?: React.ReactNode }
@@ -145,9 +146,9 @@ const Command = React.forwardRef<HTMLDivElement, CommandProps>((props, forwarded
   const propsRef = useAsRef(props)
   const { label, children, value, onValueChange, filter, shouldFilter, ...etc } = props
 
-  const listId = React.useId()
-  const labelId = React.useId()
-  const inputId = React.useId()
+  const listId = useId()
+  const labelId = useId()
+  const inputId = useId()
 
   const schedule = useScheduleLayoutEffect()
 
@@ -567,7 +568,7 @@ const Command = React.forwardRef<HTMLDivElement, CommandProps>((props, forwarded
  * the rendered item's `textContent`.
  */
 const Item = React.forwardRef<HTMLDivElement, ItemProps>((props, forwardedRef) => {
-  const id = React.useId()
+  const id = useId()
   const ref = React.useRef<HTMLDivElement>(null)
   const groupId = React.useContext(GroupContext)
   const context = useCommand()
@@ -626,10 +627,10 @@ const Item = React.forwardRef<HTMLDivElement, ItemProps>((props, forwardedRef) =
  */
 const Group = React.forwardRef<HTMLDivElement, GroupProps>((props, forwardedRef) => {
   const { heading, children, ...etc } = props
-  const id = React.useId()
+  const id = useId()
   const ref = React.useRef<HTMLDivElement>(null)
   const headingRef = React.useRef<HTMLDivElement>(null)
-  const headingId = React.useId()
+  const headingId = useId()
   const context = useCommand()
   const render = useCmdk((state) =>
     context.filter() === false ? true : !state.search ? true : state.filtered.groups.has(id),

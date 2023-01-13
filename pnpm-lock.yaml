@@ -17,10 +17,12 @@ importers:
   cmdk:
     specifiers:
       '@radix-ui/react-dialog': 1.0.0
+      '@radix-ui/react-id': ^1.0.0
       '@types/react': 18.0.15
       command-score: 0.1.2
     dependencies:
       '@radix-ui/react-dialog': 1.0.0_@types+react@18.0.15
+      '@radix-ui/react-id': 1.0.0
       command-score: 0.1.2
     devDependencies:
       '@types/react': 18.0.15
